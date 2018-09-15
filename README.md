@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-To see the app in action, go to [https://foodieblogposts.herokuapp.com/blogs](https://foodieblogposts.herokuapp.com/blogs)
+To see the app in action, go to [https://foodieblogposts.herokuapp.com](https://foodieblogposts.herokuapp.com)
 
 ## Features
 
