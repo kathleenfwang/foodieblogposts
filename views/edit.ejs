@@ -1,0 +1,30 @@
+<% include ./partials/header %> 
+
+<div class ="ui main text container segment"> 
+<h1> Edit <%= blog.title %> Food Post </h1>
+
+<form action ="/blogs/<%= blog._id %>?_method=PUT" method ="POST" class ="ui form"> 
+    <div class="focus field">
+        <label> Restaurant Name </label>
+    <input type ="text" value ="<%= blog.title %>" name ="blog[title]"> 
+    </div>
+    <div class="focus field">
+        <label> Dish Name </label>
+    <input type ="text" value ="<%= blog.body %>" name ="blog[body]"> 
+    </div>
+    <div class="focus field">
+    <label> Yelp Link </label>
+    <input type ="text" value ="<%= blog.link %>" name ="blog[link]" class ="ui input focus">
+    </div>
+    <div class="focus field">
+        <label> Image URL </label>
+    <input type ="text" value ="<%= blog.image %>" name ="blog[image]" class ="ui input focus">
+    </div>
+    <div class="focus field">
+        <label> Description </label>
+        <textarea name ="blog[desc]" required> <%= blog.desc %> </textarea>
+    </div>
+    <button class ="ui basic violet button"> Submit!</button>
+</form>
+</div>
+<% include ./partials/footer %>

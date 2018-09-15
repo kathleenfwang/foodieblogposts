@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<head> 
+    <title> Foodie Blog App </title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+     
+
+</head>
+<body> 
+
+<div class ="ui fixed inverted menu"> 
+   
+        <div class ="header item"> 
+       <a href ="/" style =" font-size:1.2em">   <i class="utensils icon" style ="font-size:2em;color:Gainsboro	"></i>Foodie Blog Site </a>
+       
+    </div>
+    
+      <a class="item" href ="/blogs/new" style ="color:Gainsboro"> <i class="file alternate icon"></i>
+        New Post
+      </a>
+      
+     <% if (!currentUser) { %>
+      <a class="item" href ="/login" style ="color:Gainsboro"> <i class="user icon"></i>
+       Login
+      </a> 
+     
+      <a class="item" href ="/register" style ="color:maroon" > <i class="user plus icon"></i>
+       Sign up 
+      </a>
+       
+     <% } else { %> 
+       <a class="item" href ="/logout" >
+        
+       Logout
+      </a>
+      <p class ="item" style ="font-size:1.2em;color:maroon"> <i class="hand paper icon"></i>Welcome <%= currentUser.username %>! </p>
+      <% } %>
+</div>
+
+ 

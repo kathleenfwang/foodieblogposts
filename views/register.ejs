@@ -1,0 +1,27 @@
+<% include ./partials/header %> 
+<h1 > Sign up! </h1>
+
+<div class="ui two column middle aligned very relaxed stackable grid">
+  <div class="column">
+    <div class="ui form">
+        <form action = "/register" method ="POST">
+      <div class="field">
+        <label>Username </label>
+        <div class="ui left icon input">
+          <input type="text" placeholder="Username" name = "username">
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <div class="ui left icon input">
+          <input type="password" name = "password">
+          <i class="lock icon"></i>
+        </div>
+      </div>
+      <button class="ui green submit button">Sign up!</button>
+      </form>
+    </div>
+  </div>
+  
+<% include ./partials/header %> 
