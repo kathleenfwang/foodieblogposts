@@ -1,7 +1,5 @@
 # FoodieBlogPosts
 
-> A Node.js web application project from the Udemy course - [The Web Developer Bootcamp by Colt Steele](https://www.udemy.com/the-web-developer-bootcamp/)
-
 ## Live Demo
 
 To see the app in action, go to [https://foodieblogposts.herokuapp.com/blogs](https://foodieblogposts.herokuapp.com/blogs)
@@ -65,4 +63,4 @@ yarn install
 
 * [Heroku](https://www.heroku.com/)
 * [Cloud9](https://aws.amazon.com/cloud9/?origin=c9io)
-## License
+ 
