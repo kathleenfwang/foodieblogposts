@@ -1,8 +1,8 @@
 # The Foodie Blog
+RESTful Food Blog app following CRUD functionality. Allows a user to create, read, update, and delete their posts. 
 
 ## Live Demo
 
-RESTful Food Blog app following CRUD functionality (create,read, update, and destroy). 
 To see the app in action, go to [http://thefoodieblog.herokuapp.com/](http://thefoodieblog.herokuapp.com/)
 
 ## Features
