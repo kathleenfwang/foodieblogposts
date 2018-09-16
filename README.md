@@ -1,8 +1,9 @@
-# FoodieBlogPosts
+# The Foodie Blog
 
 ## Live Demo
 
-To see the app in action, go to [https://foodieblogposts.herokuapp.com](https://foodieblogposts.herokuapp.com)
+RESTful Food Blog app following CRUD functionality (create,read, update, and destroy). 
+To see the app in action, go to [http://thefoodieblog.herokuapp.com/](http://thefoodieblog.herokuapp.com/)
 
 ## Features
 
@@ -48,6 +49,7 @@ yarn install
 
 * [ejs](http://ejs.co/)
 * [Semantic UI](https://semantic-ui.com)
+* [Bootsrap](https://getbootstrap.com/)
 
 ### Back-end
 
