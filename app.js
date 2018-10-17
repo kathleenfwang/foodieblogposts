@@ -5,11 +5,12 @@ var express = require('express'),
     methodOverride = require('method-override'),
     passport =require('passport'),
     User = require('./models/user'),
+    secret = require('./secret'),
     LocalStrategy = require('passport-local').Strategy;
 
 //APP CONFIG  
 //mongoose.connect("mongodb://localhost/restfulblogapp"); local host only! 
-mongoose.connect('mongodb://kathleen:pikachu1@ds257752.mlab.com:57752/foodieblogpost');
+mongoose.connect('mongodb://' + secret.user + ':' + secret.password + ' @ds257752.mlab.com:57752/foodieblogpost');
 app.set('view engine','ejs')
 app.use(express.static('public'))
 app.use(bodyparser.urlencoded({extended:true}))
