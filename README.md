@@ -26,11 +26,12 @@ To see the app in action, go to [http://thefoodieblog.herokuapp.com/](http://the
 * Responsive web design
 
 ### Clone or download this repository
+> To protect confidentiality, this app contains usernames and passwords that have been stored in a secret module which have not been included in the source control. The app cannot be run with its features on your local machine unless you connect your own mongodb server; however, feel free to clone the repository if needed.  
 
 ```sh
 git clone https://github.com/kathleenfwang/foodieblogposts.git
 ```
-
+ 
 ### Install dependencies
 
 ```sh
