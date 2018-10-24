@@ -66,4 +66,10 @@ yarn install
 
 * [Heroku](https://www.heroku.com/)
 * [Cloud9](https://aws.amazon.com/cloud9/?origin=c9io)
+
+### Future Additions 
+
+* Edit user sign-up page to include email verification or social media authorization 
+* Include user profiles to include user profile picture, about, and posts they made 
+* Embed Instagram images using [Instagram's API](https://www.instagram.com/developer/embedding/) to include the Instagram account of poster 
  
