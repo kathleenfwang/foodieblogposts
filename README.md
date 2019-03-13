@@ -50,7 +50,7 @@ yarn install
 
 * [ejs](http://ejs.co/)
 * [Semantic UI](https://semantic-ui.com)
-* [Bootsrap](https://getbootstrap.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 ### Back-end
 
