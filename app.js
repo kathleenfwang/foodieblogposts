@@ -95,6 +95,8 @@ app.get('/blogs/:id', function(req,res){
 
 //EDIT
 app.get('/blogs/:id/edit', function(req,res){
+    
+    //first get the blog post to edit by id: 
     Blog.findById(req.params.id, function(err,foundBlog){
         if (err) { res.redirect('/blogs') } 
         else {
@@ -164,7 +166,9 @@ function isLoggedIn(req,res,next){
     if(req.isAuthenticated()) {
         return next()
     }
+    else {
     res.redirect('/login')
+    }
 }
 app.listen(process.env.PORT, process.env.IP, function() {
 console.log("Starting!")
