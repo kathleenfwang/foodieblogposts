@@ -26,6 +26,7 @@ body {
   list-style: none;
 }
 
+/* styling for each slide in slideshow */ 
 .slideshow li { 
   background-size: cover;
   background-position: 50% 50%;
@@ -37,10 +38,12 @@ body {
   left: 0;
   opacity: 0;
   z-index: 0;
-    
-  animation: imageAnimation 50s linear infinite; /* lets you fade for 50s throughout and loop infinitely */ 
+  
+ /* fade for 50s throughout and loop infinitely */ 
+  animation: imageAnimation 50s linear infinite; 
 }
 
+/*animation delay for each individual slide with an increment of 10 seconds to prevent overlap */ 
 .slideshow li:nth-child(1) { 
   background-image: url(https://goo.gl/rdzKut);}
 .slideshow li:nth-child(2) { 
@@ -60,7 +63,7 @@ body {
   animation-delay: 40s; 
 }
  
-
+/*animation percentage is set up to 30% so the image will remain still for the rest of the animation duration*/ 
 @keyframes imageAnimation { 
   0% { 
     opacity: 0; 
