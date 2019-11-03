@@ -1,9 +1,9 @@
 # The Foodie Blog
 RESTful Food Blog app following CRUD functionality. Allows a user to create, read, update, and delete their posts. 
 
-## Live Demo
+## Live Demo [here](http://thefoodieblog.herokuapp.com/)! 
 
-To see the app in action, click [here](http://thefoodieblog.herokuapp.com/)
+See the app in action 
 
 ## Features
 
