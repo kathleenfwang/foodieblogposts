@@ -3,7 +3,7 @@ RESTful Food Blog app following CRUD functionality. Allows a user to create, rea
 
 ## Live Demo
 
-To see the app in action, go to [http://thefoodieblog.herokuapp.com/](http://thefoodieblog.herokuapp.com/)
+To see the app in action, click [here](http://thefoodieblog.herokuapp.com/)
 
 ## Features
 
