@@ -1,31 +1,53 @@
 <% include ./partials/header %>
+
+
 <div class ="ui main text container segment"> 
-<div class ="ui header huge">  
-
  
- <h1 style ="color:grey"> <%= blog.title %> <h2> <%= blog.body %> </h2>     </h1>
 
-<div class ="item"> 
+  <div class="ui   segments">
+    <div class="ui raised  segment">
+ <h1 style ="color:grey"> <%= blog.title %> : </h1>
+</div>
  
-     <img src ='<%= blog.image %>' class ="ui centered rounded big image">  
-      <h3> <%= blog.created.toDateString() %>  
+ <div class="ui raised tertiary inverted red segment"><%= blog.body %> </div>
+ 
+</div>
+<div class ="item" style ="text-align: center"> 
+     <% for (var i=0;i<blog.stars;i++) { %>
+  <i class="star icon" style ="color:goldenrod"></i>
+  <% } %> 
+     <img src ='<%= blog.image %>' class ="ui centered circular big image">  
+      <a class="ui large teal label pointing "> <%= blog.created.toDateString()  %>  </a> 
+      <div class="ui compact segment">
+ 
+    <p><i class="user red icon"  ></i> <span style ="color:#B03060"> <%= blog.username %><span></p>
   
+ 
+      <%= blog.location %>  
+  </div>
+</div>
     
-    
-    </h3>
-   
-    <p> <%= blog.desc %> </p>
+
+    <div class ="ui padded segment" style="font-size: 17px;text-align: left"> <%= blog.desc %> </div>
     <div style ="display:inline-block;"> 
+   
+   
+    <% if (!!currentUser && (currentUser.username == 'Admin' || currentUser.username == blog.username) ) { %> 
+
     <a href ="/blogs/<%= blog._id %>/edit" class ="ui basic blue button"> <i class="edit icon"></i> Edit </a>
      <form action ="/blogs/<%= blog._id %>?_method=DELETE" method ="POST"> 
     <button class ="ui basic red button"> <i class="trash alternate icon"></i> Delete </button>
+    
+   <% }  %> 
     </div>
     </form>
+   
    
 </div>
 </div>
 </div>
-    
+  <div class ="centered">
     <a href ='/blogs' class ="ui grey button"> <i class="hand point left icon"></i>Go Back </a>
+  </div>
  
 <% include ./partials/footer %>
