@@ -31,7 +31,7 @@
     <div class ="ui padded segment" style="font-size: 17px;text-align: left"> <%= blog.desc %> </div>
     <div style ="display:inline-block;"> 
    
-   
+   //only allow the author of the blog post or the admin to be able to edit or delete the post 
     <% if (!!currentUser && (currentUser.username == 'Admin' || currentUser.username == blog.username) ) { %> 
 
     <a href ="/blogs/<%= blog._id %>/edit" class ="ui basic blue button"> <i class="edit icon"></i> Edit </a>
