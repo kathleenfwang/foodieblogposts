@@ -1,35 +1,53 @@
 <% include ./partials/header %>
  
-<div class="ui massive message" style ="width:90%">
-     <div class="header" style ="font-family:Pacifico; color:#811D05;">
-   Foodie Blog Posts
+<div class="ui massive message raised segment" style ="width:90%">
+     <div class="header" style ="font-family:Pacifico; color:#B03060;">
+   The Foodie Blog
   </div>
   
                        
-<p><span style ="font-size:1.2em;">   </span> Click "New Post" to add a post about your favorite dish!</p>
+<p  style ="font-size:1em;">   Click <a href ="/blogs/new" style ="color:#E87373"> "New Post" </a><i class="hand point up outline icon"></i>to add a post about your favorite dish! </p>
                     
                    
             
         </div>
        
-  <div class="ui centered grid">
+  <div class="ui centered grid" style ="margin-right:9%;">
 
 <% blogs.forEach(function(blog) { %>
    
         <div class="four wide column">
+
     <div class="ui raised segment">
-        
-        <h3 style ="color:white;text-align:center;background-color:Gainsboro;border-radius:35px;padding:3px">
-         <%= blog.created.toDateString() %>  
+       
+       
+        <div class ="ui compact raised tertiary inverted red segment"  >
+          <%= blog.location %> 
+          
+       </div>
         
     </h3> 
-       <h1 style ="border-bottom:2px solid grey">   <span id ="title"><%= blog.title %>    </h1>
-       <h2 style ="text-align:centered"> <%= blog.body %> </h2>
+      <div class ="ui segments raised" >
+       <div class ="ui secondary segment"style ="font-family:Pacifico;font-weight: bold">   <span id ="title"><%= blog.title %> </span>   
+       </div>
+        <div class ="ui segment" style ="font-size:1em">
+           <%= blog.body %>  
+     
+</div>
+    </div>
+      <% for (var i=0;i<blog.stars;i++) { %>
+   <i class="ui yellow star icon" style ="; font-size:1.2em"></i> 
+  <% } %>   
+  <p class="ui divider"></p>
         
-     <img src ='<%= blog.image %>' class ="ui centered circular medium image">  
-    
-    <h3> <%= blog.location %></h3>
-    <p> <%= blog.desc.substring(0,100) %> ... </p>
+    <a href='/blogs/<%= blog._id %>'> <img src ='<%= blog.image %>' class ="ui centered circular medium image">  </a>
+  <div style ="text-align:center"> 
+   <a class="ui teal pointing label">  <%= blog.created.toDateString() %> </a> 
+ </div>
+    <h4> <i class="user icon" style ="color:#E87373"></i> <span> <%= blog.username %> </span></h4>
+ 
+ 
+    <div class ="ui basic segment"> <%= blog.desc.substring(0,100) %> ... </div>
      <a href ='/blogs/<%= blog._id %>' class ='ui tiny button'> Read More </a>
    
    
