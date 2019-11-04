@@ -6,21 +6,22 @@
 
   <div class="ui   segments">
     <div class="ui raised  segment">
- <h1 style ="color:grey"> <%= blog.title %> : </h1>
+ <h1 style ="color:grey;font-family: Pacifico">  <%= blog.title %> : <% for (var i=0;i<blog.stars;i++) { %>
+  <i class="ui yellow small star icon"  ></i>
+  <% } %>  </h1>
 </div>
  
- <div class="ui raised tertiary inverted red segment"><%= blog.body %> </div>
+ <div class="ui   raised tertiary inverted red segment"> <h4><%= blog.body %>   </h4> </div>
  
 </div>
 <div class ="item" style ="text-align: center"> 
-     <% for (var i=0;i<blog.stars;i++) { %>
-  <i class="star icon" style ="color:goldenrod"></i>
-  <% } %> 
-     <img src ='<%= blog.image %>' class ="ui centered circular big image">  
+     
+  <p></p>
+     <img src ='<%= blog.image %>' class ="ui large circular centered image">  
       <a class="ui large teal label pointing "> <%= blog.created.toDateString()  %>  </a> 
       <div class="ui compact segment">
  
-    <p><i class="user red icon"  ></i> <span style ="color:#B03060"> <%= blog.username %><span></p>
+    <p><i class="user icon" style ="color:#E87373" ></i> <span  > <%= blog.username %><span></p>
   
  
       <%= blog.location %>  
@@ -31,23 +32,27 @@
     <div class ="ui padded segment" style="font-size: 17px;text-align: left"> <%= blog.desc %> </div>
     <div style ="display:inline-block;"> 
    
-   //only allow the author of the blog post or the admin to be able to edit or delete the post 
+   
     <% if (!!currentUser && (currentUser.username == 'Admin' || currentUser.username == blog.username) ) { %> 
-
-    <a href ="/blogs/<%= blog._id %>/edit" class ="ui basic blue button"> <i class="edit icon"></i> Edit </a>
+  <div style ="display:inline">
+    <a href ="/blogs/<%= blog._id %>/edit" class ="ui inverted yellow button"> <i class="edit icon"></i> Edit </a>
+    <p></p>
      <form action ="/blogs/<%= blog._id %>?_method=DELETE" method ="POST"> 
-    <button class ="ui basic red button"> <i class="trash alternate icon"></i> Delete </button>
+    <button class ="ui inverted red button"> <i class="trash alternate icon"></i> Delete </button>
     
    <% }  %> 
+ </div>
     </div>
     </form>
    
    
 </div>
-</div>
-</div>
-  <div class ="centered">
+<div style ="margin-bottom: 1rem">
     <a href ='/blogs' class ="ui grey button"> <i class="hand point left icon"></i>Go Back </a>
   </div>
+</div>
+
+</div>
+  
  
 <% include ./partials/footer %>
