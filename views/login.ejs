@@ -1,35 +1,44 @@
 <% include ./partials/header %>
-<h1> Login!</h1>
-
-<div class="ui two column middle aligned very relaxed stackable grid">
+<div class ="ui padded compact raised segment">
+<h1  > Login!</h1>
+<div class ='ui compact secondary segment'>
+Login first to create new blog posts or to edit or delete your existing ones. </div>
+  <div class="ui two column very relaxed stackable grid">
   <div class="column">
     <div class="ui form">
         <form action = "/login" method ="POST">
       <div class="field">
-        <label>Username</label>
+    
         <div class="ui left icon input">
           <input type="text" placeholder="Username" name = "username">
           <i class="user icon"></i>
         </div>
       </div>
       <div class="field">
-        <label>Password</label>
+      
         <div class="ui left icon input">
-          <input type="password" name = "password">
+          <input type="password" name = "password" placeholder="password">
           <i class="lock icon"></i>
         </div>
       </div>
-      <button class="ui teal submit button">Login</button>
+      <button class="ui inverted pink submit button">Login</button>
       </form>
     </div>
   </div>
   
   <div class="center aligned column">
-    <div class="ui big green labeled icon button">
-      <a href="/register" style ="color:white"> <i class="signup icon"></i>
-      Sign Up
+    <div class="ui big yellow labeled icon button">
+      <a href="/register" style ="color:white"> <i class="signup icon"></i> 
+      Sign Up! </a>
+
     </div>
+    <div> 
+      <p></p>
+      <p> Quick and easy! Just enter a new username and password to start creating blog posts! </p>
   </div>
-</div>
+ 
+  </div>
+
+
 
 <% include ./partials/footer %>
