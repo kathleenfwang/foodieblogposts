@@ -17,7 +17,7 @@ See the app in action
 
   * Cannot edit or delete posts created by other users
 
-* Manage food posts with basic functionalities:
+* Manage food posts with CRUD functionalities:
 
   * Create, edit and delete posts
 
