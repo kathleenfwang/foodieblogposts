@@ -43,6 +43,11 @@ or
 ```sh
 yarn install
 ```
+ ## :sparkles: Future Additions :sparkles:
+
+* Edit user sign-up page to include email verification or social media authorization 
+* Include user profiles to include About sections, Food preferences, Locations, Posts, and Food recommendations
+* Embed Instagram images using [Instagram's API](https://www.instagram.com/developer/embedding/) to include the Instagram account of poster 
 
 ## Built with
 
@@ -67,9 +72,5 @@ yarn install
 * [Heroku](https://www.heroku.com/)
 * [Cloud9](https://aws.amazon.com/cloud9/?origin=c9io)
 
- ## :sparkles: Future Additions :sparkles:
 
-* Edit user sign-up page to include email verification or social media authorization 
-* Include user profiles to include About sections, Food preferences, Locations, Posts, and Food recommendations
-* Embed Instagram images using [Instagram's API](https://www.instagram.com/developer/embedding/) to include the Instagram account of poster 
  
