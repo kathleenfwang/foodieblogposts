@@ -67,7 +67,7 @@ yarn install
 * [Heroku](https://www.heroku.com/)
 * [Cloud9](https://aws.amazon.com/cloud9/?origin=c9io)
 
-:sparkles: ## Future Additions :sparkles:
+ ## :sparkles: Future Additions :sparkles:
 
 * Edit user sign-up page to include email verification or social media authorization 
 * Include user profiles to include About sections, Food preferences, Locations, Posts, and Food recommendations
