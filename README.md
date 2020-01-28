@@ -70,6 +70,6 @@ yarn install
 ### Future Additions 
 
 * Edit user sign-up page to include email verification or social media authorization 
-* Include user profiles to include user profile picture, about, and posts they made 
+* Include user profiles to include About sections, Food preferences, Locations, Posts, and Food recommendations
 * Embed Instagram images using [Instagram's API](https://www.instagram.com/developer/embedding/) to include the Instagram account of poster 
  
