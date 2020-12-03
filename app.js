@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express'), 
     app = express(), 
     bodyparser = require('body-parser'),
@@ -5,12 +6,17 @@ var express = require('express'),
     methodOverride = require('method-override'),
     passport =require('passport'),
     User = require('./models/user'),
-    secret = require('./secret'),
+    flash = require('connect-flash'),
     LocalStrategy = require('passport-local').Strategy;
 
+// when running locally
+const PORT = 3000; 
+
 //APP CONFIG  
-//mongoose.connect("mongodb://localhost/restfulblogapp"); local host only! 
-mongoose.connect('mongodb://' + secret.user + ':' + secret.password + ' @ds257752.mlab.com:57752/foodieblogpost');
+//mongoose.connect("mongodb://localhost/restfulblogapp"); //local host only! 
+mongoose.connect(process.env.URL);
+
+//USING THE DEPENDENCIES 
 app.set('view engine','ejs')
 app.use(express.static('public'))
 app.use(bodyparser.urlencoded({extended:true}))
@@ -22,11 +28,14 @@ app.use(require('express-session')({
     resave: false,
     saveUnitialize: false
 }))
+
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session())
 passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
+
 
 // LETTING EVERYONE USE THE USER VARIABLE. 
 
@@ -34,6 +43,8 @@ app.use(function(req,res,next) {
     res.locals.currentUser = req.user;
     next() // NEED THIS SO WE CAN MOVE ON TO NEXT. 
 })
+
+ 
 //MONGOOSE CONFIG 
 var blogSchema = new mongoose.Schema({
     title: String,
@@ -42,6 +53,8 @@ var blogSchema = new mongoose.Schema({
     created: {type:Date, default: Date.now},
     location: String, 
     desc: String,
+    username: String,
+    stars: Number
 })
 
 var Blog = mongoose.model('Blog', blogSchema)
@@ -95,8 +108,6 @@ app.get('/blogs/:id', function(req,res){
 
 //EDIT
 app.get('/blogs/:id/edit', function(req,res){
-    
-    //first get the blog post to edit by id: 
     Blog.findById(req.params.id, function(err,foundBlog){
         if (err) { res.redirect('/blogs') } 
         else {
@@ -150,10 +161,12 @@ app.get('/login', function(req,res){
 //app.post('/login', middleware, callback)
 app.post('/login', passport.authenticate("local", {
     successRedirect: "/blogs", 
-    failureRedirect: "/login"
-}), function( req,res){
-    
-})
+    failureRedirect: "/login",
+    failureFlash: true 
+    }))
+
+
+app.get('/error', (req,res) => res.render('error'))
 
 //LOGOUT 
 app.get('/logout', function(req,res){
@@ -166,10 +179,10 @@ function isLoggedIn(req,res,next){
     if(req.isAuthenticated()) {
         return next()
     }
-    else {
     res.redirect('/login')
-    }
 }
-app.listen(process.env.PORT, process.env.IP, function() {
-console.log("Starting!")
-});
+
+app.listen(process.env.PORT || PORT, process.env.IP, () => console.log("Starting"))
+
+//when running app locally
+//app.listen(PORT, () => console.log("Starting!"));
